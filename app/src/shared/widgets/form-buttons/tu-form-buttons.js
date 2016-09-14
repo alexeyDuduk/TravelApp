@@ -15,7 +15,8 @@
             scope: {},
             bindToController: {
                 onSubmitButtonClick: '&',
-                onCancelButtonClick: '&'
+                onCancelButtonClick: '&',
+                canSubmit: '&'
             },
             controller: tuFormButtonsController,
             controllerAs: 'tuFormButtons'

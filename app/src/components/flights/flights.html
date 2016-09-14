@@ -1,15 +1,16 @@
 <div class="search-form">
-    <form>
+    <form name="form">
         <h4 class="text-muted">Flights</h4>
         <tu-dates-interval-input start-date="flights.startDate" end-date="flights.endDate"></tu-dates-interval-input>
         <label>From</label>
         <br>
-        <input type="text" ng-model="flights.from">
+        <input type="text" ng-model="flights.from" required>
         <br>
         <label>To</label>
         <br>
-        <input type="text" ng-model="flights.to">
+        <input type="text" ng-model="flights.to" required>
         <tu-form-buttons on-submit-button-click="flights.submit()"
+                         can-submit="form.$valid"
                          on-cancel-button-click="flights.cancel()">
         </tu-form-buttons>
     </form>

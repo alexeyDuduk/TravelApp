@@ -1,5 +1,5 @@
 <div class="search-form">
-    <form>
+    <form name="form">
         <h4 class="text-muted">Cars</h4>
         <tu-dates-interval-input start-date="cars.startDate" end-date="cars.endDate"></tu-dates-interval-input>
         <label>Type</label>
@@ -10,8 +10,9 @@
         <br>
         <label>Location</label>
         <br>
-        <input type="text" ng-model="cars.location">
+        <input type="text" ng-model="cars.location" required>
         <tu-form-buttons on-submit-button-click="cars.submit()"
+                         can-submit="form.$valid"
                          on-cancel-button-click="cars.cancel()">
         </tu-form-buttons>
     </form>
