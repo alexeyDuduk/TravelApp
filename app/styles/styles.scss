@@ -1,0 +1,43 @@
+.search-categories {
+
+  &--category {
+    padding: 10px;
+
+
+    &--selected {
+      background: white;
+    }
+  }
+}
+
+
+.search-params {
+}
+
+
+.search-form {
+  select,
+  input[type="text"] {
+    width: 100%;
+  }
+
+
+  &--date-input {
+    display: inline-block;
+  }
+
+  &--form-buttons {
+    float: right;
+    margin-top: 20px;
+  }
+}
+
+.previous-searches {
+  &--search-item {
+    margin-top: 10px;
+  }
+
+  &--button--remove {
+    float: right;
+  }
+}

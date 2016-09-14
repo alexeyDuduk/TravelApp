@@ -6,10 +6,13 @@
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js',
-        'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js'
+        'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js',
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
     ];
     var STYLES_FILE = 'app/styles/*.scss';
     var STYLES_VENDORS = [
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
     ];
 
     var gulp = require('gulp');
@@ -111,7 +114,7 @@
     });
 
     gulp.task('dev', function () {
-        gulp.start('copy', 'lint', 'styles', 'templates', 'scripts', 'watch', 'connect');
+        gulp.start('copy', 'styles', 'templates', 'scripts', 'watch', 'connect');
     });
 
     gulp.task('default', [ 'dev' ]);

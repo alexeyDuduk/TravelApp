@@ -1,0 +1,18 @@
+<div class="search-form">
+    <form>
+        <h4 class="text-muted">Cars</h4>
+        <tu-dates-interval-input start-date="cars.startDate" end-date="cars.endDate"></tu-dates-interval-input>
+        <label>Type</label>
+        <br>
+        <select ng-model="cars.selectedType">
+            <option ng-repeat="item in cars.types" ng-value="item.title">{{item.title}}</option>
+        </select>
+        <br>
+        <label>Location</label>
+        <br>
+        <input type="text" ng-model="cars.location">
+        <tu-form-buttons on-submit-button-click="cars.submit()"
+                         on-cancel-button-click="cars.cancel()">
+        </tu-form-buttons>
+    </form>
+</div>

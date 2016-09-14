@@ -1,0 +1,18 @@
+<div class="search-form">
+    <form>
+        <h4 class="text-muted">Hotels</h4>
+        <tu-dates-interval-input start-date="hotels.startDate" end-date="hotels.endDate"></tu-dates-interval-input>
+        <label>Amenities</label>
+        <br>
+        <select ng-model="hotels.selectedAmenitiesItem">
+            <option ng-repeat="item in hotels.amenitiesList" ng-value="item.title">{{item.title}}</option>
+        </select>
+        <br>
+        <label>Location</label>
+        <br>
+        <input type="text" ng-model="hotels.location">
+        <tu-form-buttons on-submit-button-click="hotels.submit()"
+                         on-cancel-button-click="hotels.cancel()">
+        </tu-form-buttons>
+    </form>
+</div>

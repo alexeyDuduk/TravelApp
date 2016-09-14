@@ -1,0 +1,38 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="col-md-offset-2">
+        <h3 class="text-muted">Travel app</h3>
+    </div>
+    <hr>
+    <div class="jumbotron clearfix">
+        <div class="search-categories col-md-4 col-md-offset-1">
+            <div ng-repeat="item in travelApp.searchCategories"
+                 ng-click="travelApp.onSearchCategoryClick(item)"
+                 ng-class="{ 'search-categories--category--selected': travelApp.isCategorySelected(item) }"
+                 class="search-categories--category">
+                {{item.title}}
+            </div>
+        </div>
+        <div ui-view class="search-params col-md-5 col-md-offset-1"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 previous-searches">
+        <hr>
+        <h4 class="text-muted">Previous searches</h4>
+        <div ng-repeat="item in travelApp.previousSearchItems" class="previous-searches--search-item">
+            <span>{{item.startDate | date}} - {{item.endDate | date}} </span>
+            <span>{{item.categoryTitle}}: </span>
+            <span ng-if="item.categoryType === 'flights'">
+                {{item.from}} &gt; {{item.to}}
+            </span>
+            <span ng-if="item.categoryType === 'hotels'">
+                {{item.location}}, {{item.amenitiesTitle}}
+            </span>
+            <span ng-if="item.categoryType === 'cars'">
+                {{item.location}}, {{item.selectedTypeTitle}}
+            </span>
+            <span ng-click="travelApp.onRemoveSearchItemClick(item)"
+                  class="btn btn-xs btn-danger previous-searches--button--remove">
+                x
+            </span>
+        </div>
+    </div>
+</div>
