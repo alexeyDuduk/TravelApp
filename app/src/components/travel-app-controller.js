@@ -21,6 +21,7 @@
         ctrl.onSearchCategoryClick = onSearchCategoryClick;
         ctrl.isCategorySelected = isCategorySelected;
         ctrl.onRemoveSearchItemClick = onRemoveSearchItemClick;
+        ctrl.getPreviousSearchTemplate = getPreviousSearchTemplate;
 
         activate();
 
@@ -63,6 +64,14 @@
 
         function updatePreviousSearches () {
             ctrl.previousSearchItems = travelSearchService.getLastSearchParams();
+        }
+
+        function getPreviousSearchTemplate (previousSearchParam) {
+            var category = ctrl.searchCategories.filter(function (searchCategory) {
+                return searchCategory.type === previousSearchParam.categoryType;
+            })[0];
+
+            return category.previousSearchTemplatePath;
         }
     }
 })();

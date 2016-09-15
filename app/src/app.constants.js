@@ -7,17 +7,23 @@
             FLIGHTS: {
                 title: 'Flights',
                 stateName: 'travel-app.flights',
-                type: 'flights'
+                type: 'flights',
+                previousSearchTemplatePath: 'src/components/flights/previous-search.html',
+                glyphIcon: 'glyphicon-plane'
             },
             HOTELS: {
                 title: 'Hotels',
                 stateName: 'travel-app.hotels',
-                type: 'hotels'
+                type: 'hotels',
+                previousSearchTemplatePath: 'src/components/hotels/previous-search.html',
+                glyphIcon: 'glyphicon-tent'
             },
             CARS: {
                 title: 'Cars',
                 stateName: 'travel-app.cars',
-                type: 'cars'
+                type: 'cars',
+                previousSearchTemplatePath: 'src/components/cars/previous-search.html',
+                glyphIcon: 'glyphicon-road'
             }
         })
         .constant('Amenities', {
