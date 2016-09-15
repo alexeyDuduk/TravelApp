@@ -1,13 +1,13 @@
 <div class="search-form">
     <form name="form">
         <div class="form-group">
-            <h4 class="text-primary">Cars</h4>
+            <h4 class="text-primary">{{'CARS' | translate}}</h4>
             <ta-dates-interval-input start-date="cars.startDate" end-date="cars.endDate"></ta-dates-interval-input>
-            <label>Type</label>
+            <label>{{'TYPE' | translate}}</label>
             <select ng-model="cars.selectedType" class="form-control">
                 <option ng-repeat="item in cars.types" ng-value="item.title">{{item.title}}</option>
             </select>
-            <label>Location</label>
+            <label>{{'LOCATION' | translate}}</label>
             <input ng-model="cars.location" type="text" class="form-control" required>
             <ta-form-buttons on-submit-button-click="cars.submit()"
                              can-submit="form.$valid"

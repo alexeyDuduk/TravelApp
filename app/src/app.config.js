@@ -4,6 +4,7 @@
     angular
         .module('app')
         .config(routesConfig)
+        .config(i18nConfig)
         .run(run);
 
     routesConfig.$inject = [ '$stateProvider', '$urlRouterProvider', 'SearchCategory' ];
@@ -39,12 +40,10 @@
         $state.go('travel-app.flights');
     }
 
-    i18nConfig.$inject = [ '$translateProvider' ];
+    i18nConfig.$inject = [ '$translateProvider', 'StringResource' ];
 
-    function i18nConfig ($translateProvider) {
-        $translateProvider.useStaticFilesLoader({
-            prefix: 'resources/locale-',
-            suffix: '.json'
-        });
+    function i18nConfig ($translateProvider, StringResource) {
+        $translateProvider.translations('en', StringResource);
+        $translateProvider.preferredLanguage('en');
     }
 })();

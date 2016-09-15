@@ -1,10 +1,10 @@
 <div class="search-form">
     <form name="form">
-        <h4 class="text-primary">Flights</h4>
+        <h4 class="text-primary">{{'FLIGHTS' | translate}}</h4>
         <ta-dates-interval-input start-date="flights.startDate" end-date="flights.endDate"></ta-dates-interval-input>
-        <label>From</label>
+        <label>{{'FROM' | translate}}</label>
         <input ng-model="flights.from" type="text" class="form-control" required>
-        <label>To</label>
+        <label>{{'TO' | translate}}</label>
         <input ng-model="flights.to" type="text" class="form-control" required>
         <ta-form-buttons on-submit-button-click="flights.submit()"
                          can-submit="form.$valid"

@@ -68,5 +68,21 @@
                 title: 'Sport',
                 type: 'sport'
             }
+        })
+        .constant('StringResource', {
+            TRAVEL_APP: 'Travel app',
+            FLIGHTS: 'Flights',
+            HOTELS: 'Hotels',
+            FROM: 'From',
+            CARS: 'Cars',
+            TO: 'To',
+            LOCATION: 'Location',
+            AMENITIES: 'Amenities',
+            TYPE: 'Type',
+            START_DATE: 'Start date',
+            END_DATE: 'End date',
+            PREVIOUS_SEARCHES: 'Previous searches',
+            CANCEL: 'Cancel',
+            SUBMIT: 'Submit'
         });
 })();

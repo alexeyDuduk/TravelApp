@@ -1,11 +1,11 @@
 <div class="search-form--form-buttons pull-right">
     <input ng-click="taFormButtons.onCancelButtonClick()"
            type="reset"
-           value="Cancel"
+           value="{{'CANCEL' | translate}}"
            class="btn">
     <input ng-click="taFormButtons.onSubmitButtonClick()"
            ng-disabled="!taFormButtons.canSubmit()"
            type="submit"
-           value="Submit"
+           value="{{'SUBMIT' | translate}}"
            class="btn btn-primary">
 </div>

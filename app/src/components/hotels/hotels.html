@@ -1,12 +1,12 @@
 <div class="search-form">
     <form name="form">
-        <h4 class="text-primary">Hotels</h4>
+        <h4 class="text-primary">{{'HOTELS' | translate}}</h4>
         <ta-dates-interval-input start-date="hotels.startDate" end-date="hotels.endDate"></ta-dates-interval-input>
-        <label>Amenities</label>
+        <label>{{'AMENITIES' | translate}}</label>
         <select ng-model="hotels.selectedAmenitiesTitle" class="form-control">
             <option ng-repeat="item in hotels.amenitiesList" ng-value="item.title">{{item.title}}</option>
         </select>
-        <label>Location</label>
+        <label>{{'LOCATION' | translate}}</label>
         <input ng-model="hotels.location" type="text" class="form-control" required>
         <ta-form-buttons on-submit-button-click="hotels.submit()"
                          can-submit="form.$valid"

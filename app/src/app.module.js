@@ -5,6 +5,7 @@
         .module('app', [
             'ui.router',
             'ui.bootstrap',
+            'pascalprecht.translate',
             'templates'
         ]);
 })();

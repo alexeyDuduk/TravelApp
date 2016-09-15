@@ -12,7 +12,9 @@
         'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.0/angular-translate.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_en-us.js'
     ];
     var STYLES_FILES = 'app/styles/*.scss';
     var STYLES_VENDORS = [
