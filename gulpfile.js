@@ -1,14 +1,18 @@
 (function () {
     'use strict';
 
-    var JS_FILES = [ 'app/*.module.js', 'app/**/*.module.js', 'app/*.js', 'app/**/*.js', '!app/libs/*.js' ];
+    var JS_FILES = [
+        'app/*.module.js',
+        'app/**/*.module.js',
+        'app/*.js',
+        'app/**/*.js',
+        '!app/libs/*.js'];
     var JS_VENDORS = [
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js',
-        'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js'
     ];
     var STYLES_FILES = 'app/styles/*.scss';
     var STYLES_VENDORS = [

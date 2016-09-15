@@ -1,23 +1,20 @@
 .search-categories {
-
   &--category {
     padding: 10px;
-    border: 1px solid transparent;
-    border-right: 1px solid grey;
-    border-radius: 4px 0 0 4px;
-
-
-    &--selected {
-      border: 1px solid grey;
-      border-right: solid transparent;
-    }
+    cursor: pointer;
   }
 }
 
 
 .search-form {
   &--date-input {
-    display: inline-block;
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
 

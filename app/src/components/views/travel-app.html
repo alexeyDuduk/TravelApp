@@ -4,15 +4,15 @@
     </div>
     <hr>
     <div class="clearfix">
-        <div class="search-categories col-sm-4 col-sm-offset-1">
-            <div ng-repeat="item in travelApp.searchCategories"
+        <ul class="search-categories col-sm-3 list-group">
+            <li ng-repeat="item in travelApp.searchCategories"
                  ng-click="travelApp.onSearchCategoryClick(item)"
-                 ng-class="{ 'search-categories--category--selected': travelApp.isCategorySelected(item) }"
-                 class="search-categories--category">
+                 ng-class="{ 'active': travelApp.isCategorySelected(item) }"
+                 class="search-categories--category list-group-item">
                 <span class="glyphicon {{item.glyphIcon}}"></span> {{item.title}}
-            </div>
-        </div>
-        <div ui-view class="search-params col-sm-5 col-sm-offset-1"></div>
+            </li>
+        </ul>
+        <div ui-view class="search-params col-sm-9"></div>
     </div>
     <div class="previous-searches">
         <hr>

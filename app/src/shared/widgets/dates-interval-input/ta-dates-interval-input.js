@@ -11,7 +11,6 @@
         return {
             restrict: 'E',
             templateUrl: 'src/shared/widgets/dates-interval-input/ta-dates-input-interval.html',
-            link: link,
             scope: {},
             bindToController: {
                 startDate: '=',
@@ -20,9 +19,6 @@
             controller: taDatesIntervalInputController,
             controllerAs: 'taDatesIntervalInput'
         };
-
-        function link () {
-        }
     }
 
     taDatesIntervalInputController.$inject = [];

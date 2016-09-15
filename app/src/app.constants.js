@@ -32,7 +32,7 @@
                 starsCount: 0
             },
             ONE_STAR: {
-                title: '1 stars',
+                title: '1 star',
                 starsCount: 1
             },
             TWO_STARS: {

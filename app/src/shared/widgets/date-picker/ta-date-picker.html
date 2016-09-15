@@ -1,0 +1,15 @@
+<div class="input-group">
+    <input ng-model="taDatePicker.dateValue"
+           uib-datepicker-popup
+           is-open="taDatePicker.isDatePickerOpen"
+           ng-click="taDatePicker.toggleDatePicker()"
+           type="text"
+           class="form-control">
+    <span class="input-group-btn">
+        <button ng-click="taDatePicker.toggleDatePicker()"
+                type="button"
+                class="btn btn-default">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </button>
+    </span>
+</div>
