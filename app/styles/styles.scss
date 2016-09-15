@@ -2,42 +2,32 @@
 
   &--category {
     padding: 10px;
+    border-right: 1px solid grey;
+    border-radius: 4px 0 0 4px;
 
 
     &--selected {
-      background: white;
+      border: 1px solid grey;
+      border-right: 0;
     }
   }
 }
 
 
-.search-params {
-}
-
-
 .search-form {
-  select,
-  input[type="text"] {
-    width: 100%;
-  }
-
-
   &--date-input {
     display: inline-block;
   }
 
+
   &--form-buttons {
-    float: right;
     margin-top: 20px;
   }
 }
 
+
 .previous-searches {
   &--search-item {
-    margin-top: 10px;
-  }
-
-  &--button--remove {
-    float: right;
+    margin-top: 20px;
   }
 }

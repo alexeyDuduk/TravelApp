@@ -10,9 +10,8 @@
         'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
     ];
-    var STYLES_FILE = 'app/styles/*.scss';
+    var STYLES_FILES = 'app/styles/*.scss';
     var STYLES_VENDORS = [
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
     ];
 
     var gulp = require('gulp');
@@ -28,7 +27,7 @@
     var download = require('gulp-download');
 
     gulp.task('styles', function () {
-        return gulp.src(STYLES_FILE)
+        return gulp.src(STYLES_FILES)
             .pipe(sass())
             .pipe(autoprefixer('last 2 version'))
             .pipe(gulp.dest('dist/styles'))
@@ -51,7 +50,7 @@
     gulp.task('watch', function () {
         var livereload = require('gulp-livereload');
 
-        gulp.watch(STYLES_FILE, [ 'styles' ]);
+        gulp.watch(STYLES_FILES, [ 'styles' ]);
         gulp.watch([ 'app/**/*.js', 'app/*.js', 'gulpfile.js' ], [ 'scripts' ]);
         gulp.watch('app/*.html', [ 'copy' ]);
         gulp.watch('app/**/*.html', [ 'templates' ]);

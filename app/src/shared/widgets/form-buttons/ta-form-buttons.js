@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .directive('tuFormButtons', tuFormButtons);
+        .directive('taFormButtons', taFormButtons);
 
-    tuFormButtons.$inject = [];
+    taFormButtons.$inject = [];
 
-    function tuFormButtons () {
+    function taFormButtons () {
         return {
             restrict: 'E',
-            templateUrl: 'src/shared/widgets/form-buttons/tu-form-buttons.html',
+            templateUrl: 'src/shared/widgets/form-buttons/ta-form-buttons.html',
             link: link,
             scope: {},
             bindToController: {
@@ -18,19 +18,19 @@
                 onCancelButtonClick: '&',
                 canSubmit: '&'
             },
-            controller: tuFormButtonsController,
-            controllerAs: 'tuFormButtons'
+            controller: taFormButtonsController,
+            controllerAs: 'taFormButtons'
         };
     }
     
     function link (scope, element, attrs) {
         if (!attrs.onSubmitButtonClick || !attrs.onCancelButtonClick) {
-            throw new Error("tu-form-buttons requires 'on-submit-button-click' and 'on-cancel-button-click'");
+            throw new Error("ta-form-buttons requires 'on-submit-button-click' and 'on-cancel-button-click'");
         }
     }
 
-    tuFormButtonsController.$inject = [];
+    taFormButtonsController.$inject = [];
 
-    function tuFormButtonsController () {
+    function taFormButtonsController () {
     }
 })();

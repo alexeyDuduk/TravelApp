@@ -22,16 +22,28 @@
         })
         .constant('Amenities', {
             ANY: {
-                title: 'Any'
+                title: 'Any',
+                starsCount: 0
             },
             ONE_STAR: {
-                title: '1 star'
+                title: '1 stars',
+                starsCount: 1
+            },
+            TWO_STARS: {
+                title: '2 stars',
+                starsCount: 2
             },
             THREE_STARS: {
-                title: '3 star'
+                title: '3 stars',
+                starsCount: 3
+            },
+            FOUR_STARS: {
+                title: '4 stars',
+                starsCount: 4
             },
             FIVE_STARS: {
-                title: '5 star'
+                title: '5 stars and higher',
+                starsCount: 5
             }
         })
         .constant('CarType', {
