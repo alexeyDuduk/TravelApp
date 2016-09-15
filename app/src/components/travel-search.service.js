@@ -49,7 +49,7 @@
             localStorage.setItem(SEARCH_PARAMS_KEY, value);
             callbacks.forEach(function (callback) {
                 callback();
-            })
+            });
         }
 
         function getLastParams () {

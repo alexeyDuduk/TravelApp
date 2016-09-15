@@ -8,22 +8,22 @@
                 title: 'Flights',
                 stateName: 'travel-app.flights',
                 type: 'flights',
-                previousSearchTemplatePath: 'src/components/flights/previous-search.html',
-                glyphIcon: 'glyphicon-plane'
+                previousSearchTemplatePath: 'src/components/flights/views/previous-search.html',
+                icon: 'glyphicon-plane'
             },
             HOTELS: {
                 title: 'Hotels',
                 stateName: 'travel-app.hotels',
                 type: 'hotels',
-                previousSearchTemplatePath: 'src/components/hotels/previous-search.html',
-                glyphIcon: 'glyphicon-tent'
+                previousSearchTemplatePath: 'src/components/hotels/views/previous-search.html',
+                icon: 'glyphicon-tent'
             },
             CARS: {
                 title: 'Cars',
                 stateName: 'travel-app.cars',
                 type: 'cars',
-                previousSearchTemplatePath: 'src/components/cars/previous-search.html',
-                glyphIcon: 'glyphicon-road'
+                previousSearchTemplatePath: 'src/components/cars/views/previous-search.html',
+                icon: 'glyphicon-road'
             }
         })
         .constant('Amenities', {
@@ -68,21 +68,5 @@
                 title: 'Sport',
                 type: 'sport'
             }
-        })
-        .constant('StringResource', {
-            TRAVEL_APP: 'Travel app',
-            FLIGHTS: 'Flights',
-            HOTELS: 'Hotels',
-            FROM: 'From',
-            CARS: 'Cars',
-            TO: 'To',
-            LOCATION: 'Location',
-            AMENITIES: 'Amenities',
-            TYPE: 'Type',
-            START_DATE: 'Start date',
-            END_DATE: 'End date',
-            PREVIOUS_SEARCHES: 'Previous searches',
-            CANCEL: 'Cancel',
-            SUBMIT: 'Submit'
         });
 })();

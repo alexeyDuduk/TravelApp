@@ -10,19 +10,19 @@
     function taDatesIntervalInput () {
         return {
             restrict: 'E',
-            templateUrl: 'src/shared/widgets/dates-interval-input/ta-dates-input-interval.html',
+            templateUrl: 'src/shared/widgets/dates-interval-input/dates-input-interval.html',
             scope: {},
             bindToController: {
                 startDate: '=',
                 endDate: '='
             },
-            controller: taDatesIntervalInputController,
-            controllerAs: 'taDatesIntervalInput'
+            controller: DatesIntervalInputController,
+            controllerAs: 'datesIntervalInput'
         };
     }
 
-    taDatesIntervalInputController.$inject = [];
+    DatesIntervalInputController.$inject = [];
 
-    function taDatesIntervalInputController () {
+    function DatesIntervalInputController () {
     }
 })();

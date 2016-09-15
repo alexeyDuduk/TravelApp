@@ -39,14 +39,13 @@
             })[0];
 
             travelSearchService.search({
-                categoryTitle: SearchCategory.HOTELS.title,
                 categoryType: SearchCategory.HOTELS.type,
                 startDate: ctrl.startDate,
                 endDate: ctrl.endDate,
                 amenitiesTitle: ctrl.selectedAmenitiesTitle,
                 amenitiesStarsCount: selectedAmenitiesItem.starsCount,
                 location: ctrl.location
-            })
+            });
         }
     }
 })();

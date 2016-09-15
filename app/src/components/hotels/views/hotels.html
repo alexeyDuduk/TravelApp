@@ -7,7 +7,10 @@
             <option ng-repeat="item in hotels.amenitiesList" ng-value="item.title">{{item.title}}</option>
         </select>
         <label>{{'LOCATION' | translate}}</label>
-        <input ng-model="hotels.location" type="text" class="form-control" required>
+        <input ng-model="hotels.location" type="text" class="form-control" name="location" required>
+        <div ng-show="form.location.$invalid && !form.location.$pristine" class="error-message-container">
+            <div class="error-message-container--message">{{'REQUIRED' | translate}}</div>
+        </div>
         <ta-form-buttons on-submit-button-click="hotels.submit()"
                          can-submit="form.$valid"
                          on-cancel-button-click="hotels.cancel()">

@@ -10,6 +10,8 @@
     function TravelAppController ($state, $timeout, SearchCategory, travelSearchService) {
         var ctrl = this;
 
+        var searchCategoryByType = {};
+
         ctrl.searchCategories = [
             SearchCategory.FLIGHTS,
             SearchCategory.HOTELS,
@@ -26,6 +28,9 @@
         activate();
 
         function activate () {
+            ctrl.searchCategories.forEach(function (searchCategory) {
+                searchCategoryByType[searchCategory.type] = searchCategory;
+            });
             travelSearchService.subscribeOnLastSearchParamsChanged(onLastSearchParamsChanged);
             updateCurrentSearchCategory();
             updatePreviousSearches();
@@ -63,7 +68,15 @@
         }
 
         function updatePreviousSearches () {
-            ctrl.previousSearchItems = travelSearchService.getLastSearchParams();
+            var previousSearchItems = travelSearchService.getLastSearchParams();
+
+            previousSearchItems.forEach(function (previousSearchItem) {
+                var correspondingCategory = searchCategoryByType[previousSearchItem.categoryType];
+
+                previousSearchItem.categoryTitle = correspondingCategory.title;
+                previousSearchItem.icon = correspondingCategory.icon;
+            });
+            ctrl.previousSearchItems = previousSearchItems;
         }
 
         function getPreviousSearchTemplate (previousSearchParam) {

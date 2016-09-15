@@ -10,19 +10,26 @@
     function taDatePicker () {
         return {
             restrict: 'E',
-            templateUrl: 'src/shared/widgets/date-picker/ta-date-picker.html',
+            templateUrl: 'src/shared/widgets/date-picker/date-picker.html',
+            link: link,
             scope: {},
             bindToController: {
                 dateValue: '='
             },
-            controller: TaDatePickerController,
-            controllerAs: 'taDatePicker'
+            controller: DatePickerController,
+            controllerAs: 'datePicker'
         };
+
+        function link (scope, element, attrs) {
+            if (!attrs.dateValue) {
+                throw new Error("Directive 'ta-date-picker' requires attribute 'date-value'.");
+            }
+        }
     }
 
-    TaDatePickerController.$inject = [];
+    DatePickerController.$inject = [];
 
-    function TaDatePickerController () {
+    function DatePickerController () {
         var ctrl = this;
 
         ctrl.isDatePickerOpen = false;

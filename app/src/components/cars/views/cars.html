@@ -1,5 +1,5 @@
 <div class="search-form">
-    <form name="form">
+    <form name="form" novalidate>
         <div class="form-group">
             <h4 class="text-primary">{{'CARS' | translate}}</h4>
             <ta-dates-interval-input start-date="cars.startDate" end-date="cars.endDate"></ta-dates-interval-input>
@@ -8,7 +8,14 @@
                 <option ng-repeat="item in cars.types" ng-value="item.title">{{item.title}}</option>
             </select>
             <label>{{'LOCATION' | translate}}</label>
-            <input ng-model="cars.location" type="text" class="form-control" required>
+            <input ng-model="cars.location"
+                   type="text"
+                   class="form-control"
+                   name="location"
+                   required>
+            <div ng-show="form.location.$invalid && !form.location.$pristine" class="error-message-container">
+                <div class="error-message-container--message">{{'REQUIRED' | translate}}</div>
+            </div>
             <ta-form-buttons on-submit-button-click="cars.submit()"
                              can-submit="form.$valid"
                              on-cancel-button-click="cars.cancel()">

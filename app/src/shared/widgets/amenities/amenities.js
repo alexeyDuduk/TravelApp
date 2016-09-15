@@ -11,27 +11,27 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'src/shared/widgets/amenities/ta-amenities.html',
+            templateUrl: 'src/shared/widgets/amenities/amenities.html',
             link: link,
             scope: {},
             bindToController: {
                 starsCount: '=',
                 title: '='
             },
-            controller: TaAmenitiesController,
-            controllerAs: 'taAmenities'
+            controller: AmenitiesController,
+            controllerAs: 'amenities'
         };
     }
 
     function link (scope, element, attrs) {
         if (!attrs.starsCount || !attrs.title) {
-            throw new Error("ta-amenities requires 'stars-count' and 'title'");
+            throw new Error("Directive 'ta-amenities' requires attributes 'stars-count', 'title'.");
         }
     }
 
-    TaAmenitiesController.$inject = [];
+    AmenitiesController.$inject = [];
 
-    function TaAmenitiesController () {
+    function AmenitiesController () {
         var ctrl = this;
         
         ctrl.getRange = getRange;

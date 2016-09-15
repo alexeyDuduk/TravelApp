@@ -2,22 +2,26 @@
     <div class="col-sm-offset-2">
         <h2 class="text-muted">{{'TRAVEL_APP' | translate}}</h2>
     </div>
-    <hr>
+    <hr />
     <div class="clearfix">
         <ul class="search-categories col-sm-3 list-group">
             <li ng-repeat="item in travelApp.searchCategories"
-                 ng-click="travelApp.onSearchCategoryClick(item)"
-                 ng-class="{ 'active': travelApp.isCategorySelected(item) }"
-                 class="search-categories--category list-group-item">
-                <span class="glyphicon {{item.glyphIcon}}"></span> {{item.title}}
+                ng-click="travelApp.onSearchCategoryClick(item)"
+                ng-class="{ 'active': travelApp.isCategorySelected(item) }"
+                class="search-categories--category list-group-item">
+                <span ng-class="item.icon" class="glyphicon"></span>
+                {{item.title}}
             </li>
         </ul>
         <div ui-view class="search-params col-sm-9"></div>
     </div>
     <div class="previous-searches">
-        <hr>
+        <hr />
         <h4 class="text-muted">{{'PREVIOUS_SEARCHES' | translate}}</h4>
         <div ng-repeat="item in travelApp.previousSearchItems" class="previous-searches--search-item">
+            <span ng-class="item.icon" class="glyphicon"></span>
+            <span>{{item.categoryTitle}}: </span>
+            <span>{{item.startDate | date}} - {{item.endDate | date}}, </span>
             <span ng-include="travelApp.getPreviousSearchTemplate(item)"></span>
             <span ng-click="travelApp.onRemoveSearchItemClick(item)"
                   class="btn btn-xs close">

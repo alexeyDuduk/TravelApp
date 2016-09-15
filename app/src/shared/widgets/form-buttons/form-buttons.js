@@ -10,7 +10,7 @@
     function taFormButtons () {
         return {
             restrict: 'E',
-            templateUrl: 'src/shared/widgets/form-buttons/ta-form-buttons.html',
+            templateUrl: 'src/shared/widgets/form-buttons/form-buttons.html',
             link: link,
             scope: {},
             bindToController: {
@@ -18,19 +18,19 @@
                 onCancelButtonClick: '&',
                 canSubmit: '&'
             },
-            controller: taFormButtonsController,
-            controllerAs: 'taFormButtons'
+            controller: FormButtonsController,
+            controllerAs: 'formButtons'
         };
     }
     
     function link (scope, element, attrs) {
         if (!attrs.onSubmitButtonClick || !attrs.onCancelButtonClick) {
-            throw new Error("ta-form-buttons requires 'on-submit-button-click' and 'on-cancel-button-click'");
+            throw new Error("Directive 'ta-form-buttons' requires attributes 'on-submit-button-click', 'on-cancel-button-click'.");
         }
     }
 
-    taFormButtonsController.$inject = [];
+    FormButtonsController.$inject = [];
 
-    function taFormButtonsController () {
+    function FormButtonsController () {
     }
 })();

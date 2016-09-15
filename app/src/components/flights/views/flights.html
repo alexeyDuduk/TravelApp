@@ -1,0 +1,20 @@
+<div class="search-form">
+    <form name="form">
+        <h4 class="text-primary">{{'FLIGHTS' | translate}}</h4>
+        <ta-dates-interval-input start-date="flights.startDate" end-date="flights.endDate"></ta-dates-interval-input>
+        <label>{{'FROM' | translate}}</label>
+        <input ng-model="flights.from" type="text" class="form-control" name="from" required>
+        <div ng-show="form.from.$invalid && !form.from.$pristine" class="error-message-container">
+            <div class="error-message-container--message">{{'REQUIRED' | translate}}</div>
+        </div>
+        <label>{{'TO' | translate}}</label>
+        <input ng-model="flights.to" type="text" class="form-control" name="to" required>
+        <div ng-show="form.to.$invalid && !form.to.$pristine" class="error-message-container">
+            <div class="error-message-container--message">{{'REQUIRED' | translate}}</div>
+        </div>
+        <ta-form-buttons on-submit-button-click="flights.submit()"
+                         can-submit="form.$valid"
+                         on-cancel-button-click="flights.cancel()">
+        </ta-form-buttons>
+    </form>
+</div>

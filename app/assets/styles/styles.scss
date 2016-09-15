@@ -23,6 +23,16 @@
   }
 }
 
+.error-message-container {
+  position: relative;
+  height: 0;
+
+  &--message {
+    position: absolute;
+    color: red;
+  }
+}
+
 
 .previous-searches {
   &--search-item {

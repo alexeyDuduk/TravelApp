@@ -1,8 +1,13 @@
 {
-  "name": "application-name",
+  "name": "travel-app",
   "version": "0.0.1",
-  "description": "material",
+  "description": "travel app",
   "author": "aliaksei.duduk",
+  "license": "UNLICECED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexeyDuduk/TravelApp/"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",

@@ -26,13 +26,12 @@
 
         function submit () {
             travelSearchService.search({
-                categoryTitle: SearchCategory.FLIGHTS.title,
                 categoryType: SearchCategory.FLIGHTS.type,
                 startDate: ctrl.startDate,
                 endDate: ctrl.endDate,
                 from: ctrl.from,
                 to: ctrl.to
-            })
+            });
         }
     }
 })();

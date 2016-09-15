@@ -1,24 +1,24 @@
 (function () {
     'use strict';
 
-    var JS_FILES = [
+    var jsFiles = [
         'app/*.module.js',
         'app/**/*.module.js',
         'app/*.js',
         'app/**/*.js',
         '!app/libs/*.js'];
-    var JS_VENDORS = [
+    var jsVendors = [
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js',
         'http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap-tpls.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.0/angular-translate.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_en-us.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_en-us.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.12.1/angular-translate-loader-static-files.min.js'
     ];
-    var STYLES_FILES = 'app/styles/*.scss';
-    var STYLES_VENDORS = [
-    ];
+    var stylesFiles = 'app/assets/styles/*.scss';
+    var stylesVendors = [];
 
     var gulp = require('gulp');
     var sass = require('gulp-sass');
@@ -33,7 +33,7 @@
     var download = require('gulp-download');
 
     gulp.task('styles', function () {
-        return gulp.src(STYLES_FILES)
+        return gulp.src(stylesFiles)
             .pipe(sass())
             .pipe(autoprefixer('last 2 version'))
             .pipe(gulp.dest('dist/styles'))
@@ -44,7 +44,7 @@
     });
 
     gulp.task('scripts', function () {
-        return gulp.src(JS_FILES)
+        return gulp.src(jsFiles)
             .pipe(concat('app.js'))
             .pipe(gulp.dest('dist/scripts'))
             .pipe(rename({ suffix: '.min' }))
@@ -56,10 +56,11 @@
     gulp.task('watch', function () {
         var livereload = require('gulp-livereload');
 
-        gulp.watch(STYLES_FILES, [ 'styles' ]);
+        gulp.watch(stylesFiles, [ 'styles' ]);
         gulp.watch([ 'app/**/*.js', 'app/*.js', 'gulpfile.js' ], [ 'scripts' ]);
         gulp.watch('app/*.html', [ 'copy' ]);
         gulp.watch('app/**/*.html', [ 'templates' ]);
+        gulp.watch('app/assets/resources/*', [ 'resources' ]);
         livereload.listen();
         gulp.watch([ 'dist/**' ]).on('change', livereload.changed);
     });
@@ -67,7 +68,7 @@
     gulp.task('lint', function () {
         var jshint = require('gulp-jshint');
 
-        gulp.src(JS_FILES)
+        gulp.src(jsFiles)
             .pipe(jshint('.jshintrc'))
             .pipe(jshint.reporter('jshint-stylish'))
             .pipe(jshint.reporter('fail'));
@@ -79,6 +80,11 @@
             .pipe(gulp.dest('dist/scripts'));
     });
 
+    gulp.task('resources', function () {
+        return gulp.src('app/assets/resources/*')
+            .pipe(gulp.dest('dist/resources/'));
+    });
+
     gulp.task('connect', function () {
         connect.server({
             port: 8911,
@@ -87,14 +93,14 @@
     });
 
     gulp.task('download-scripts', function () {
-        return download(JS_VENDORS)
+        return download(jsVendors)
             .pipe(gulp.dest('app/libs'))
             .pipe(concat('libs.min.js'))
             .pipe(gulp.dest('dist/scripts'));
     });
 
     gulp.task('download-styles', function () {
-        return download(STYLES_VENDORS)
+        return download(stylesVendors)
             .pipe(gulp.dest('app/styles/vendors'))
             .pipe(concat('vendor-styles.min.css'))
             .pipe(gulp.dest('dist/styles'));
@@ -119,7 +125,7 @@
     });
 
     gulp.task('dev', function () {
-        gulp.start('copy', 'styles', 'templates', 'scripts', 'watch', 'connect');
+        gulp.start('copy', 'styles', 'templates', 'scripts', 'resources', 'watch', 'connect');
     });
 
     gulp.task('default', [ 'dev' ]);

@@ -33,13 +33,12 @@
 
         function submit () {
             travelSearchService.search({
-                categoryTitle: SearchCategory.CARS.title,
                 categoryType: SearchCategory.CARS.type,
                 startDate: ctrl.startDate,
                 endDate: ctrl.endDate,
                 selectedTypeTitle: ctrl.selectedType,
                 location: ctrl.location
-            })
+            });
         }
     }
 })();
